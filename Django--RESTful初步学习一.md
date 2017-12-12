@@ -567,6 +567,7 @@ import json  # 引入 json 库，我们会用它来处理 json 字符串。
 			# 所以我们需要先把得到的 json 字符串转化为 python 数据结构。
 			instances = json.loads(serialized_data) if serialized_data else 'No instance'
 			data = {'instances': instances}
+			# 将kwargs中的键值对更新到data里面
 			data.update(kwargs)  # 添加其他的字段
 			return JsonResponse(data=data)  # 返回响应
 			
